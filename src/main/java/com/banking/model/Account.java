@@ -48,9 +48,10 @@ public class Account {
         return transactions;
     }
 
-        public void addTransaction(Transaction transaction) {
+    public void addTransaction(Transaction transaction) {
         this.transactions.add(transaction);
     }
+
     @Override
     public String toString() {
         return "Account{" +
