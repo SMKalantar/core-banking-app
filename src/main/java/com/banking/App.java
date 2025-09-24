@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        HelloBean hello = (HelloBean) context.getBean("helloBean");
-        System.out.println(hello.getMessage());
+        Bank bank = (Bank) context.getBean("bank");
+        System.out.println(bank.getAccount(12345L));
     }
 }

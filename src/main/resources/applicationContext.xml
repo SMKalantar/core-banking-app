@@ -2,8 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" >
-<!-- Simple bean example -->
-    <bean id="helloBean" class="com.banking.HelloBean">
-        <property name="message" value="Welcome to Spring!"/>
+
+    <bean id="account1" class="com.banking.model.Account">
+        <constructor-arg name="accountNumber" value="12345"/>
+        <constructor-arg name="customerName" value="John Doe"/>
+        <constructor-arg name="balance" value="1000.0"/>
+    </bean>
+
+    <!-- Bank class to hold accounts -->
+    <bean id="bank" class="com.banking.Bank">
+        <property name="accounts">
+            <map>
+                <entry key="12345" value-ref="account1"/>
+            </map>
+        </property>
     </bean>
 </beans>
